@@ -114,7 +114,7 @@ This should deploy a single AWS TGW Site.  This will consist of the following re
 - 1 AWS Transit Gateway
 - 2 AWS TGW VPC Attachments to each Spoke VPC (previously created in `base-aws-network`)
 
-Note that it may take ~10 minutes for this terragrunt apply to complete.
+Note that it may take ~15 minutes for this terragrunt apply to complete.
 
 After it completes you can proceed to deploying workload resources into 
 the Spoke VPCs.
