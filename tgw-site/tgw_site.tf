@@ -33,6 +33,10 @@ resource "volterra_aws_tgw_site" "aws-region-1" {
       vpc_id = var.spoke2VpcId
     }    
   }
+  # James added this for spoke to spoke traffic monitoring
+  tgw_security {
+    east_west_service_policy_allow_all = true
+  }
 
   vn_config {
     global_network_list {
