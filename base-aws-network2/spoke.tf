@@ -23,17 +23,17 @@ resource "aws_subnet" "f5-xc-spoke-external" {
   }
 }
 
-resource "aws_subnet" "f5-xc-spoke-internal" {
-  vpc_id                  = aws_vpc.f5-xc-spoke.id
-  for_each                = var.spokeVpc.internal
-  cidr_block              = each.value.cidr
-  map_public_ip_on_launch = "false"
-  availability_zone       = var.spokeVpc.azs[each.key]["az"]
+# resource "aws_subnet" "f5-xc-spoke-internal" {
+#   vpc_id                  = aws_vpc.f5-xc-spoke.id
+#   for_each                = var.spokeVpc.internal
+#   cidr_block              = each.value.cidr
+#   map_public_ip_on_launch = "false"
+#   availability_zone       = var.spokeVpc.azs[each.key]["az"]
 
-  tags = {
-    Name = "${var.projectPrefix}-f5-xc-spoke-external-${each.key}"
-  }
-}
+#   tags = {
+#     Name = "${var.projectPrefix}-f5-xc-spoke-external-${each.key}"
+#   }
+# }
 
 resource "aws_subnet" "f5-xc-spoke-workload" {
   vpc_id                  = aws_vpc.f5-xc-spoke.id
