@@ -105,7 +105,7 @@ resource "volterra_aws_tgw_site" "aws-region-1" {
       name = var.volterraCloudCredAWS
       namespace = "system"      
     }
-    assisted = false
+    #assisted = false
     instance_type = "t3.xlarge"
   }
   logs_streaming_disabled = true

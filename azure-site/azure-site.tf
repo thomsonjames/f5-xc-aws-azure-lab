@@ -8,7 +8,7 @@ resource "volterra_azure_vnet_site" "azure-site" {
   machine_type   = "Standard_D3_v2"
   ssh_key        = var.ssh_public_key
 
-  assisted                = false
+  #assisted                = false
   logs_streaming_disabled = true
   no_worker_nodes         = true
 
